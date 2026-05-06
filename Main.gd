@@ -2,8 +2,10 @@ extends Node
 
 var _lib = null
 var gloves = preload("res://Items/Clothing/Gloves_Leather/Files/MT_Gloves_Leather.tres")
+var gloves2 = preload("res://Items/Clothing/Gloves_Work/Gloves_Work.tres")
 var color_button = ColorPickerButton.new()
 var SAVE_PATH = "user://glove_color.cfg"
+var handsSlot = _lib._caller.interface.equipmentUI.get_child(14)
 
 func _ready():
     load_glove_color()
@@ -40,7 +42,8 @@ func Open():
             color_button.color_changed.connect(glovesChanged)
 
 func glovesChanged(new_color):
-    gloves.set_shader_parameter("tint", new_color)  # Set the shader parameter on gloves with that color
+    gloves.set_shader_parameter("tint", new_color) # Set the shader parameter on gloves with that color
+    gloves2.material.set_shader_parameter("tint", new_color)
     save_glove_color(new_color)
 
 func save_glove_color(color: Color):
