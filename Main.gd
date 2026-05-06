@@ -57,5 +57,6 @@ func load_glove_color():
     if err == OK:
         var saved_color = config.get_value("Visuals", "glove_tint", Color.WHITE)
         gloves.set_shader_parameter("tint", saved_color)
+        gloves2.material.set_shader_parameter("tint", saved_color)
         color_button.color = saved_color
         print("Loaded saved glove color.")
