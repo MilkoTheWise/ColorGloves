@@ -1,0 +1,10 @@
+[mod]
+name="ColorGloves"
+id="color-gloves"
+version="1"
+priority=0
+
+[autoload]
+ColorGloves="res://mods/ColorGloves/Main.gd"
+
+[registry]
